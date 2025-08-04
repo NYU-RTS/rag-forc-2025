@@ -1,0 +1,14 @@
+.slidev-layout {
+
+  h1 {
+    background-color: #57068c;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+
+ }
+

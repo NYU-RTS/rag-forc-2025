@@ -1,0 +1,20 @@
+{
+  "name": "presentation",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.1.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "@slidev/types": "^52.1.0",
+    "mermaid": "^11.9.0",
+    "playwright-chromium": "^1.54.2",
+    "slidev-theme-academic": "^2.1.0",
+    "vue": "^3.5.18"
+  }
+}
