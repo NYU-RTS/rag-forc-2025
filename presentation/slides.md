@@ -126,6 +126,57 @@ Here is another comment.
 
 
 ---
+layout: figure-side
+figureCaption: Overview of retreival
+figureFootnoteNumber: 1
+figureUrl: retreival_overview.png
+---
+
+# Retreival overview
+
+- Subsets of documents (hereafter known as chunks) are encoded by an indexing algorithm
+- These indices are then stored in a database
+- Query is indexed by the same indexing algorithm
+- Query index is compared with existing indices
+- Document chunks that are similar to the 
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://github.com/castorini/pyserini/blob/master/docs/conceptual-framework.md" rel="noreferrer" target="_blank">"From pyserini, conceptual overview"</a></Footnote>
+</Footnotes>
+
+---
+layout: figure-side
+figureCaption: Overview of retreival with BM25
+figureFootnoteNumber: 1
+figureUrl: retreival_bm25.png
+---
+
+# BM25 indexing (Sparse Lexical indexing)
+
+The most popular search algorithm is "BM25" which represents document chunks as bag of (important) words, completely ignoring the order of words.
+
+Commonly occuring words like "the", "a", "their", etc are removed as they do not differentiate document chunks.  
+
+Documents and queries are stored as "sparse" vectors (vectors filled mostly with zeros, the non-zeros indicate which parts of the vocabulary are present).
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://github.com/castorini/pyserini/blob/master/docs/conceptual-framework.md" rel="noreferrer" target="_blank">"From pyserini, conceptual overview"</a></Footnote>
+</Footnotes>
+
+---
+layout: figure
+figureCaption: Full text search with MilvusLite
+figureFootnoteNumber: 1
+figureUrl: milvus_bm25.png
+---
+# Full text search with MilvusLite
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://milvus.io/docs/full-text-search.md" rel="noreferrer" target="_blank">"From Milvus docs"</a></Footnote>
+</Footnotes>
+
+
+---
 layout: center
 class: text-center
 ---

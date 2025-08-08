@@ -1,0 +1,14 @@
+[workspace]
+authors = ["Sajid Ali <sajidsyed2021@u.northwestern.edu>"]
+channels = ["conda-forge"]
+name = "presentation"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+install = { cmd = ["pnpm", "install"] }
+build = { cmd = ["pnpm", "build"], depends-on = ["install"] }
+start = { cmd = ["pnpm", "run", "dev"], depends-on = ["build"] }
+
+[dependencies]
+pnpm = ">=10.14.0,<11"

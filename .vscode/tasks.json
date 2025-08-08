@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run pnpm dev",
+            "type": "shell",
+            "command": "pixi run start",
+			"options": {
+                "cwd": "${workspaceFolder}/presentation"
+            },
+        }
+    ]
+}
