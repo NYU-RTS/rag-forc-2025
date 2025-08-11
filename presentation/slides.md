@@ -54,6 +54,22 @@ hideInToc: true
 
 <Toc text-sm minDepth="1" maxDepth="1" />
 
+---
+layout: figure-side
+figureCaption: "Context Rot"
+figureFootnoteNumber: 1
+figureUrl: context_rot.png
+---
+# Why not pass all the context to the LLM
+
+- LLM context windows are limited
+- The advertised window =! usable window
+- Even if it was, longer context -> slower responses, more expensive!
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://research.trychroma.com/context-rot" rel="noreferrer" target="_blank">From ChromaDB, Context Rot: How Increasing Input Tokens Impacts LLM Performance</a></Footnote>
+  <Footnote :number=1><a href="https://arxiv.org/abs/2502.05167" rel="noreferrer" target="_blank">See also "NoLiMa: Long-Context Evaluation Beyond Literal Matching"</a></Footnote>
+</Footnotes>
 
 ---
 transition: fade-out
@@ -64,7 +80,7 @@ transition: fade-out
 <br>
 <br>
 
-Retreival Augmented Generation is a technique to inject custom context to prompts when invoking an LLM. LLMs may be able to answer questions based on their training data, but the training 
+Retrieval Augmented Generation is a technique to inject custom context to prompts when invoking an LLM. LLMs may be able to answer questions based on their training data, but the training 
 data is frozen before the LLM is released for general use. 
 
 <br>
@@ -86,7 +102,7 @@ transition: fade-out
 ---
 # Overview
 
-Here's what we are trying to acheive:
+Here's what we are trying to achieve:
 <br>
 
 ```mermaid
@@ -99,9 +115,9 @@ flowchart LR;
     subgraph Ingestion
     A-- "Parse and Chunk" -->B;
     end
-    subgraph Retreival
-    C-- "Retreive from index" -->B;
-    B-- "Retreived chunks" -->D;
+    subgraph Retrieval
+    C-- "Retrieve from index" -->B;
+    B-- "Retrieved chunks" -->D;
     end
     subgraph Augmented Generation
     D-- "LLM" -->E;
@@ -132,7 +148,7 @@ figureFootnoteNumber: 1
 figureUrl: retreival_overview.png
 ---
 
-# Retreival overview
+# Retrieval overview
 
 - Subsets of documents (hereafter known as chunks) are encoded by an indexing algorithm
 - These indices are then stored in a database
@@ -155,7 +171,7 @@ figureUrl: retreival_bm25.png
 
 The most popular search algorithm is "BM25" which represents document chunks as bag of (important) words, completely ignoring the order of words.
 
-Commonly occuring words like "the", "a", "their", etc are removed as they do not differentiate document chunks.  
+Commonly occurring words like "the", "a", "their", etc are removed as they do not differentiate document chunks.  
 
 Documents and queries are stored as "sparse" vectors (vectors filled mostly with zeros, the non-zeros indicate which parts of the vocabulary are present).
 
@@ -174,6 +190,63 @@ figureUrl: milvus_bm25.png
 <Footnotes separator>
   <Footnote :number=1><a href="https://milvus.io/docs/full-text-search.md" rel="noreferrer" target="_blank">"From Milvus docs"</a></Footnote>
 </Footnotes>
+
+---
+layout: figure-side
+figureCaption: Overview of Docling
+figureFootnoteNumber: 1
+figureUrl: docling_overview.png
+---
+# Docling pipeline
+- Docling is an library that can be used to process document URLs/PDFs/etc to chunks of text that can be indexed. 
+- Docling converts all douments to a unified "DoclingDocument" format that can be optionally exported to Markdown. 
+-
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://docling-project.github.io/docling/" rel="noreferrer" target="_blank">"Docling simplifies document processing, parsing diverse formats — including advanced PDF understanding — \n and providing seamless integrations with the gen AI ecosystem."</a></Footnote>
+</Footnotes>
+
+
+---
+layout: figure-side
+figureCaption: Encoder-only transformer
+figureFootnoteNumber: 1
+figureUrl: milvus_bm25.png
+---
+# Encoder Transformers (embedding models)
+
+---
+layout: figure-side
+figureCaption: Cosine search with embeddings
+figureFootnoteNumber: 1
+figureUrl: milvus_bm25.png
+---
+# Cosine search with embeddings
+
+---
+layout: figure-side
+figureCaption: Hybrid Search
+figureFootnoteNumber: 1
+figureUrl: milvus_bm25.png
+---
+# Cosine search with embeddings
+
+
+---
+layout: figure-side
+figureCaption: Vision Transformers
+figureFootnoteNumber: 1
+figureUrl: milvus_bm25.png
+---
+# Vision Transformers
+
+---
+layout: figure-side
+figureCaption: Hands-on
+figureFootnoteNumber: 1
+figureUrl: milvus_bm25.png
+---
+# Hands-on session
 
 
 ---
