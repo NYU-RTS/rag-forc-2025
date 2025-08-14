@@ -143,9 +143,9 @@ Here is another comment.
 
 ---
 layout: figure-side
-figureCaption: Overview of retreival
+figureCaption: Overview of retrieval
 figureFootnoteNumber: 1
-figureUrl: retreival_overview.png
+figureUrl: architecture-biencoder.png
 ---
 
 # Retrieval overview
@@ -162,9 +162,9 @@ figureUrl: retreival_overview.png
 
 ---
 layout: figure-side
-figureCaption: Overview of retreival with BM25
+figureCaption: Overview of retrieval with BM25
 figureFootnoteNumber: 1
-figureUrl: retreival_bm25.png
+figureUrl: architecture-bm25.png
 ---
 
 # BM25 indexing (Sparse Lexical indexing)
@@ -200,26 +200,48 @@ figureUrl: docling_overview.png
 # Docling pipeline
 - Docling is an library that can be used to process document URLs/PDFs/etc to chunks of text that can be indexed. 
 - Docling converts all douments to a unified "DoclingDocument" format that can be optionally exported to Markdown. 
--
+- Comes with an document structure aware chunker that can be customized.
 
 <Footnotes separator>
-  <Footnote :number=1><a href="https://docling-project.github.io/docling/" rel="noreferrer" target="_blank">"Docling simplifies document processing, parsing diverse formats — including advanced PDF understanding — \n and providing seamless integrations with the gen AI ecosystem."</a></Footnote>
+  <Footnote :number=1><a href="https://docling-project.github.io/docling/" rel="noreferrer" target="_blank">"Docling simplifies document processing, parsing diverse formats and providing seamless integrations with the gen AI ecosystem."</a></Footnote>
 </Footnotes>
+
+
+---
+layout: default
+transition: fade-out
+---
+# Demo with NYU Library Research Guides!
+- Compile a list of URLs for the reseasch guides
+- Use docling to process HTML pages
+- Use MilvusLite to create a BM25 index
+- Try this yourself during the hands-on later!
 
 
 ---
 layout: figure-side
 figureCaption: Encoder-only transformer
 figureFootnoteNumber: 1
-figureUrl: milvus_bm25.png
+figureUrl: embedding-models.png
 ---
 # Encoder Transformers (embedding models)
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/" rel="noreferrer" target="_blank">"We use an embedding model to convert textual input, such as documents, sentences, and phrases, to numerical representations, called embeddings."</a></Footnote>
+</Footnotes>
+
+---
+layout: default
+transition: fade-out
+---
+# Encoder Transformers (embedding models)
+Head over to this demo and see how embedding models cluster sentences (projected onto a 2D grid, the actual embedding dimensions are much larger): https://huggingface.co/spaces/webml-community/ettin-embedding-webgpu
 
 ---
 layout: figure-side
 figureCaption: Cosine search with embeddings
 figureFootnoteNumber: 1
-figureUrl: milvus_bm25.png
+figureUrl: cosine-similarity.png
 ---
 # Cosine search with embeddings
 
@@ -227,9 +249,10 @@ figureUrl: milvus_bm25.png
 layout: figure-side
 figureCaption: Hybrid Search
 figureFootnoteNumber: 1
-figureUrl: milvus_bm25.png
+figureUrl: cosine-similarity.png
 ---
 # Cosine search with embeddings
+
 
 
 ---
