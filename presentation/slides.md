@@ -36,7 +36,7 @@ Foundations of Research Computing (FORC) Camp 2025
 
 
 <div class="abs-br m-6 text-xl">
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
+  <a href="https://github.com/NYU-RTS/rag-forc-2025" target="_blank" class="slidev-icon-btn">
     <carbon:logo-github />
   </a>
 </div>
