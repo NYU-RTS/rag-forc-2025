@@ -60,7 +60,7 @@ figureCaption: "Context Rot"
 figureFootnoteNumber: 1
 figureUrl: context_rot.png
 ---
-# Why not pass all the context to the LLM
+# Why not pass all the context to the LLM?
 
 - LLM context windows are limited
 - The advertised window =! usable window
@@ -155,7 +155,7 @@ figureUrl: architecture-biencoder.png
 - These indices are then stored in a database
 - Query is indexed by the same indexing algorithm
 - Query index is compared with existing indices
-- Document chunks that are similar to the 
+- `k` document chunks that are similar to the query are returned
 
 <Footnotes separator>
   <Footnote :number=1><a href="https://github.com/castorini/pyserini/blob/master/docs/conceptual-framework.md" rel="noreferrer" target="_blank">"From pyserini, conceptual overview"</a></Footnote>
@@ -215,7 +215,7 @@ transition: fade-out
 # Demo with NYU Library Research Guides!
 - Compile a list of URLs for the reseasch guides
 - Use docling to process HTML pages
-- Use MilvusLite to create a BM25 index
+- Use `MilvusLite` to create a BM25 index
 - Try this yourself during the hands-on later!
 
 
@@ -235,10 +235,10 @@ figureUrl: embedding-models.png
 </Footnotes>
 
 ---
-layout: quote
+layout: default
 transition: fade-out
 ---
-# Encoder Transformers (embedding models)
+# Embeddings demo
 
 - Traditional indexing techniques did not account for contexts for a word, wherever it occurred the word was indexed the same way.  
 - LLMs produce "contextual" embeddings that can capture the semantic meaning over just tracking the keyword occurrences. 
@@ -246,7 +246,11 @@ transition: fade-out
  <br/>
  <br/>
 
-> Head over to this demo and see how embedding models cluster sentences (projected onto a 2D grid, the actual embedding dimensions are much larger): https://huggingface.co/spaces/webml-community/ettin-embedding-webgpu
+<blockquote>
+  <p>
+    Head over to this demo and see how embedding models cluster sentences (projected onto a 2D grid, the actual embedding dimensions are much larger): <a href=https://huggingface.co/spaces/webml-community/ettin-embedding-webgpu>https://huggingface.co/spaces/webml-community/ettin-embedding-webgpu</a>
+  </p>
+</blockquote>
 
 ---
 layout: figure-side
@@ -256,15 +260,53 @@ figureUrl: cosine-similarity.png
 ---
 # Cosine search with embeddings
 
+Once we have the embedding vectors for the text chunks and the query, we can compute the similarity scores for each (query, text-chunk) pair. 
+
+With normalized vectors, we can skip computing the magnitudes and compute only the dot/inner product.
+
+
 ---
-layout: figure-side
+layout: default
+transition: fade-out
+---
+# Demo comparing BM25 and semantic search
+- The BM25 results retrieve keywords, but fail to account for intent of the query. For the demo query, it worked well.
+
+- But, that may not always be the case <sup>1</sup>:
+<div class="center">
+  <img src="/croissants-are-breads.png" alt="Semantic search can mistake croissants for breads!" class="center" style="width: 75%; height: 75%">
+</div>
+
+<Footnotes separator>
+  <Footnote :number=1> <a rel="noreferrer" target="_blank">"From https://fika.bar/paoramen/local-first-search-01K1B0WM1X4P5SV5QAES0Z5N75"</a></Footnote>
+</Footnotes>
+
+---
+layout: two-cols-header
+---
+# Which one to choose?
+
+:: left ::
+<v-click> 
+<img src="/which-one-to-choose.jpg" alt="Which one to choose?" class="center" style="width: 75%; height: 75%">
+</v-click>
+
+:: right ::
+<v-click> 
+<img src="/both.jpg" alt="Both?" class="center" style="width: 75%; height: 75%">
+</v-click>
+
+---
+layout: figure
 figureCaption: Hybrid Search
 figureFootnoteNumber: 1
-figureUrl: cosine-similarity.png
+figureUrl: hybrid-search.png
 ---
-# Cosine search with embeddings
+# Hybrid Search
 
-
+<Footnotes separator>
+  <Footnote :number=1><a href="https://milvus.io/docs/multi-vector-search.md" rel="noreferrer" target="_blank">"From Milvus documentation"</a></Footnote>
+</Footnotes>
 
 ---
 layout: figure-side
@@ -272,15 +314,17 @@ figureCaption: Vision Transformers
 figureFootnoteNumber: 1
 figureUrl: milvus_bm25.png
 ---
-# Vision Transformers
+# Advanced: Vision Transformers
 
 ---
-layout: figure-side
-figureCaption: Hands-on
-figureFootnoteNumber: 1
-figureUrl: milvus_bm25.png
+layout: default
 ---
 # Hands-on session
+
+- Perform RAG on a dataset relevant to you
+- Or extend the tutorial example with a relevance check by updating the prompt or using a different LLM
+- Check for hallucinations in the output against the retrieved context with [LettuceDetect](https://krlabs.eu/LettuceDetect/)
+- Try using the vision transformers available in Docling on your documents
 
 
 ---
