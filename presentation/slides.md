@@ -68,8 +68,9 @@ figureUrl: context_rot.png
 
 <Footnotes separator>
   <Footnote :number=1><a href="https://research.trychroma.com/context-rot" rel="noreferrer" target="_blank">From ChromaDB, Context Rot: How Increasing Input Tokens Impacts LLM Performance</a></Footnote>
-  <Footnote :number=1><a href="https://arxiv.org/abs/2502.05167" rel="noreferrer" target="_blank">See also "NoLiMa: Long-Context Evaluation Beyond Literal Matching"</a></Footnote>
+  <Footnote :number=2><a href="https://arxiv.org/abs/2502.05167" rel="noreferrer" target="_blank">See also "NoLiMa: Long-Context Evaluation Beyond Literal Matching"</a></Footnote>
 </Footnotes>
+
 
 ---
 transition: fade-out
@@ -132,7 +133,7 @@ flowchart LR;
 
 <p style="color:#009b8a" v-click>
   <b>
-    How do we <span v-mark="{at:2, type:'underline'}"> retreive </span> relevant bits from an index?
+    How do we <span v-mark="{at:2, type:'underline'}"> retrieve </span> relevant bits from an index?
   </b>
 </p>
 
@@ -169,11 +170,11 @@ figureUrl: architecture-bm25.png
 
 # BM25 indexing (Sparse Lexical indexing)
 
-The most popular search algorithm is "BM25" which represents document chunks as bag of (important) words, completely ignoring the order of words.
+- The most popular search algorithm is "BM25" which represents document chunks as bag of (important) words, completely ignoring the order of words.
 
-Commonly occurring words like "the", "a", "their", etc are removed as they do not differentiate document chunks.  
+- Commonly occurring words like "the", "a", "their", etc are removed as they do not differentiate document chunks.  
 
-Documents and queries are stored as "sparse" vectors (vectors filled mostly with zeros, the non-zeros indicate which parts of the vocabulary are present).
+- Documents and queries are stored as "sparse" vectors (vectors filled mostly with zeros, the non-zeros indicate which parts of the vocabulary are present).
 
 <Footnotes separator>
   <Footnote :number=1><a href="https://github.com/castorini/pyserini/blob/master/docs/conceptual-framework.md" rel="noreferrer" target="_blank">"From pyserini, conceptual overview"</a></Footnote>
@@ -188,7 +189,7 @@ figureUrl: milvus_bm25.png
 # Full text search with MilvusLite
 
 <Footnotes separator>
-  <Footnote :number=1><a href="https://milvus.io/docs/full-text-search.md" rel="noreferrer" target="_blank">"From Milvus docs"</a></Footnote>
+  <Footnote :number=1><a href="https://milvus.io/docs/full-text-search.md" rel="noreferrer" target="_blank">"From Milvus documentation"</a></Footnote>
 </Footnotes>
 
 ---
@@ -226,16 +227,26 @@ figureUrl: embedding-models.png
 ---
 # Encoder Transformers (embedding models)
 
+- LLMs that generate text/images/audio/etc are decoder models, i.e. they are designed to generate content one token at a time. 
+- Encoder LLMs on the other hand are used for pre defined tasks like generating embeddings
+
 <Footnotes separator>
   <Footnote :number=1><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/" rel="noreferrer" target="_blank">"We use an embedding model to convert textual input, such as documents, sentences, and phrases, to numerical representations, called embeddings."</a></Footnote>
 </Footnotes>
 
 ---
-layout: default
+layout: quote
 transition: fade-out
 ---
 # Encoder Transformers (embedding models)
-Head over to this demo and see how embedding models cluster sentences (projected onto a 2D grid, the actual embedding dimensions are much larger): https://huggingface.co/spaces/webml-community/ettin-embedding-webgpu
+
+- Traditional indexing techniques did not account for contexts for a word, wherever it occurred the word was indexed the same way.  
+- LLMs produce "contextual" embeddings that can capture the semantic meaning over just tracking the keyword occurrences. 
+
+ <br/>
+ <br/>
+
+> Head over to this demo and see how embedding models cluster sentences (projected onto a 2D grid, the actual embedding dimensions are much larger): https://huggingface.co/spaces/webml-community/ettin-embedding-webgpu
 
 ---
 layout: figure-side
