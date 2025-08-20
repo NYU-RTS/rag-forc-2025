@@ -181,6 +181,29 @@ figureUrl: architecture-bm25.png
 </Footnotes>
 
 ---
+layout: figure-side
+figureCaption: "VectorDB-as-a-library runs in notebooks/laptops with a pip install"
+figureFootnoteNumber: 1
+figureUrl: milvus-lite-1.png
+---
+# Milvus Lite
+
+- Serverless, file-based vector database for processing up to a million chunks of text.
+- BM25 search out of the box (with opitonal enhancnments like phrase matching if needed).
+- Integrates well with a wide variety of LLM tools/libraries.  
+
+<br/>
+
+<v-click>
+  <img src="/milvus.png" alt="Both?" class="center" style="width: 100%; height: 25%">
+</v-click>
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://milvus.io/" rel="noreferrer" target="_blank">"Milvus documentation"</a></Footnote>
+  <Footnote :number=2><a href="https://milvus.io/blog/introducing-milvus-lite.md" rel="noreferrer" target="_blank">"Introducing Milvus Lite: Start Building a GenAI Application in Seconds"</a></Footnote>
+</Footnotes>
+
+---
 layout: figure
 figureCaption: Full text search with MilvusLite
 figureFootnoteNumber: 1
@@ -199,7 +222,7 @@ figureFootnoteNumber: 1
 figureUrl: docling_overview.png
 ---
 # Docling pipeline
-- Docling is an library that can be used to process document URLs/PDFs/etc to chunks of text that can be indexed. 
+- Docling is an library that can be used to process HTML/PDF/DOCX/etc documents to chunks of text that can be indexed. 
 - Docling converts all douments to a unified "DoclingDocument" format that can be optionally exported to Markdown. 
 - Comes with an document structure aware chunker that can be customized.
 
@@ -228,10 +251,10 @@ figureUrl: embedding-models.png
 # Encoder Transformers (embedding models)
 
 - LLMs that generate text/images/audio/etc are decoder models, i.e. they are designed to generate content one token at a time. 
-- Encoder LLMs on the other hand are used for pre defined tasks like generating embeddings
+- Encoder LLMs on the other hand are used for pre defined tasks like generating embeddings for semantic search, clustering, classification, etc.
 
 <Footnotes separator>
-  <Footnote :number=1><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/" rel="noreferrer" target="_blank">"We use an embedding model to convert textual input, such as documents, sentences, and phrases, to numerical representations, called embeddings."</a></Footnote>
+  <Footnote :number=1><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/" rel="noreferrer" target="_blank">"We use an embedding model to convert textual input, such as documents, sentences, and phrases, to numerical representations, called embeddings." <br/> From Hands-On Large Language Models By Jay Alammar, Maarten Grootendorst</a></Footnote>
 </Footnotes>
 
 ---
