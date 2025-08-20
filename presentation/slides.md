@@ -331,6 +331,37 @@ figureUrl: hybrid-search.png
   <Footnote :number=1><a href="https://milvus.io/docs/multi-vector-search.md" rel="noreferrer" target="_blank">"From Milvus documentation"</a></Footnote>
 </Footnotes>
 
+
+---
+layout: default
+---
+# RAG prompt
+
+Now that we have learnt how to retrieve rerlant context, here's a prompt template you can use for RAG:
+```py
+    completion = portkey_client.chat.completions.create(
+        model="gemini-2.5-flash",
+        temperature=2.0,
+        messages=[
+            {
+                "role": "system",
+                "content": """Human: You are an AI assistant. You are able to
+                    find answers to the questions from the contextual passage
+                    snippets provided.""",
+            },
+            {
+                "role": "user",
+                "content": f"""Use the following pieces of information enclosed
+                    in <context>  tags to provide an answer to the question
+                    enclosed in <question> tags.
+                    <context> {context} </context>
+                    <question> {args.query} </question> """,
+            },
+        ],
+    )
+```
+
+
 ---
 layout: figure-side
 figureCaption: Vision Transformers
