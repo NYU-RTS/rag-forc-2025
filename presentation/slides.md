@@ -100,6 +100,7 @@ Here is another comment.
 ---
 layout: default
 transition: fade-out
+hideInToc: true
 ---
 # Overview
 
@@ -260,6 +261,7 @@ figureUrl: embedding-models.png
 ---
 layout: default
 transition: fade-out
+hideInToc: true
 ---
 # Embeddings demo
 
