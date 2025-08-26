@@ -12,9 +12,9 @@
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "@slidev/types": "^52.1.0",
-    "mermaid": "^11.10.0",
+    "mermaid": "^11.10.1",
     "playwright-chromium": "^1.55.0",
     "slidev-theme-academic": "^2.1.0",
-    "vue": "^3.5.18"
+    "vue": "^3.5.20"
   }
 }

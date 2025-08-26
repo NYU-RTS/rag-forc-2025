@@ -12,7 +12,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/libzlib-1.3.1-h8359307_2.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/nodejs-22.17.1-hab9d20b_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/openssl-3.5.2-he92f556_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pnpm-10.14.0-h92994ff_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pnpm-10.15.0-h92994ff_0.conda
 packages:
 - conda: https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2025.8.3-hbd8a1cb_0.conda
   sha256: 837b795a2bb39b75694ba910c13c15fa4998d4bb2a622c214a6a5174b2ae53d1
@@ -84,15 +84,15 @@ packages:
   license_family: Apache
   size: 3074848
   timestamp: 1754465710470
-- conda: https://conda.anaconda.org/conda-forge/osx-arm64/pnpm-10.14.0-h92994ff_0.conda
-  sha256: 9ee539ac9f31399d499a75058cab112cede996e912ecc76873b0bc46f3675577
-  md5: 59e40b5f7aa6db53d1c8b12ab79be456
+- conda: https://conda.anaconda.org/conda-forge/osx-arm64/pnpm-10.15.0-h92994ff_0.conda
+  sha256: 885768baad1537eaecdcd0bb10f17c54386ecdcff8857817eb65f296909cb754
+  md5: 6d5a2c61631655742991cbb163519bfb
   depends:
   - nodejs
-  - libcxx >=19
   - __osx >=11.0
+  - libcxx >=19
   - nodejs >=22.17.1,<23.0a0
   license: MIT
   license_family: MIT
-  size: 3252476
-  timestamp: 1753975540646
+  size: 3240898
+  timestamp: 1755630583467

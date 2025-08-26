@@ -189,8 +189,8 @@ figureUrl: milvus-lite-1.png
 ---
 # Milvus Lite
 
-- Serverless, file-based vector database for processing up to a million chunks of text.
-- BM25 search out of the box (with opitonal enhancnments like phrase matching if needed).
+- Local, file-based vector database for processing up to a million chunks of text.
+- Full text search out of the box (with opitonal enhancnments like phrase matching if needed).
 - Integrates well with a wide variety of LLM tools/libraries.  
 
 <br/>
@@ -365,12 +365,48 @@ Now that we have learnt how to retrieve rerlant context, here's a prompt templat
 
 
 ---
-layout: figure-side
-figureCaption: Vision Transformers
-figureFootnoteNumber: 1
-figureUrl: milvus_bm25.png
+layout: default
+figureCaption: Vision Language Models
 ---
-# Advanced: Vision Transformers
+# Demo: Advanced processing pipeline with VLMs
+- Until now, we've been looking at embedding text, but documents contain images, tables, charts, etc!
+- Vision Language Models can take images and text as input and generate text as output. 
+- We will be using this to augment the existing data processing pipeline with an image captioning step!
+
+---
+layout: default
+figureCaption: What about fine tuning?
+---
+
+# What about fine-tuning?
+- Fine-tuning is an option of last-resort.
+- Fine-tuning (especially larger LLMs) is expensive and thus needs justification in the form of an evaluation.
+- You can also look into fine-tuning the embedding models for your courpurs by providing contrastive examples! This can enhance the context passed to the LLM and improve the output without having to fine-tune the LLM.
+
+ <br/>
+ <br/>
+
+<blockquote>
+  <p>
+    Refer to this presentation on the trade-offs between RAG and fine-tuning! <a href=https://parlance-labs.com/education/fine_tuning/emmanuel.html>https://parlance-labs.com/education/fine_tuning/emmanuel.html</a>
+  </p>
+</blockquote>
+
+
+
+---
+layout: figure
+figureCaption: ScholarQA by AllenAI
+figureFootnoteNumber: 1
+figureUrl: scholar-qa-allenai.png
+---
+# Advanced RAG example
+Here's an advanced RAG pipeline which incorporates many advanced techniques! Try out the live demo at https://asta.allen.ai/chat
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://asta.allen.ai/synthesize?redirect_from=corpus-qa" rel="noreferrer" target="_blank">"Ai2 Scholar QA is a system for answering scientific queries and generating literature reviews by gathering evidence from multiple documents"</a></Footnote>
+</Footnotes>
+
 
 ---
 layout: default
@@ -378,7 +414,7 @@ layout: default
 # Hands-on session
 
 - Perform RAG on a dataset relevant to you
-- Or extend the tutorial example with a relevance check by updating the prompt or using a different LLM
+- Extend the tutorial example with a relevance check by updating the prompt or using a different LLM
 - Check for hallucinations in the output against the retrieved context with [LettuceDetect](https://krlabs.eu/LettuceDetect/)
 - Try using the vision transformers available in Docling on your documents
 
