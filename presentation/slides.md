@@ -424,7 +424,7 @@ layout: center
 class: text-center
 ---
 
-# Learn More
+# Reach out to Research Technology Services, https://services.rt.nyu.edu/
 
 
 <PoweredBySlidev mt-10 />
