@@ -438,7 +438,7 @@ figureFootnoteNumber: 1
 figureUrl: scholar-qa-allenai.png
 ---
 # Advanced RAG example
-Here's an advanced RAG pipeline which incorporates many advanced techniques! Try out the live demo at https://asta.allen.ai/chat
+Here's a RAG pipeline which incorporates many advanced techniques! Try out the live demo at https://asta.allen.ai/chat
 
 <Footnotes separator>
   <Footnote :number=1><a href="https://asta.allen.ai/synthesize?redirect_from=corpus-qa" rel="noreferrer" target="_blank">"Ai2 Scholar QA is a system for answering scientific queries and generating literature reviews by gathering evidence from multiple documents"</a></Footnote>
