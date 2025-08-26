@@ -148,6 +148,7 @@ layout: figure-side
 figureCaption: Overview of retrieval
 figureFootnoteNumber: 1
 figureUrl: architecture-biencoder.png
+hideInToc: true
 ---
 
 # Retrieval overview
@@ -209,6 +210,7 @@ layout: figure
 figureCaption: Full text search with MilvusLite
 figureFootnoteNumber: 1
 figureUrl: milvus_bm25.png
+hideInToc: true
 ---
 # Full text search with MilvusLite
 
@@ -282,6 +284,7 @@ layout: figure-side
 figureCaption: Cosine search with embeddings
 figureFootnoteNumber: 1
 figureUrl: cosine-similarity.png
+hideInToc: true
 ---
 # Cosine search with embeddings
 
@@ -334,6 +337,7 @@ figureUrl: hybrid-search.png
 </Footnotes>
 
 
+
 ---
 layout: default
 ---
@@ -362,6 +366,39 @@ Now that we have learnt how to retrieve rerlant context, here's a prompt templat
         ],
     )
 ```
+
+---
+layout: figure-side
+figureCaption: Cross-encoder vs Bi-encoder
+figureFootnoteNumber: 1
+figureUrl: biencoder-vs-crossencoder.png
+---
+
+# Advanced: Cross-encoders for reranking 
+- Bi-encoders are fast, but lose accuracy
+- Cross-encoders are slow, but are more accurate. They do this by comparing the tokens directly.
+- They can be used as a filter during the second stage of a retrieval pipeline.
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://zilliz.com/blog/augmented-sbert-data-augmentation-method-for-improving-bi-encoders" rel="noreferrer" target="_blank">"Cross-encoders vs Bi-encoders"</a></Footnote>
+  <Footnote :number=2><a href="https://ben.clavie.eu/ragatouille/#longer-might-read" rel="noreferrer" target="_blank">"Quick overview of their pros and cons of widely-used retrieval approaches"</a></Footnote>
+</Footnotes>
+
+
+---
+layout: figure-side
+figureCaption: Two stage retrieval
+figureFootnoteNumber: 1
+figureUrl: 2-stage-retrieval.png
+---
+
+# Advanced: Two stage retrieval
+- Instead of relying solely on the RRF reranker, use a cross-encoder to re-rank.
+- Use a bi-encoder to cast a wide net, use a cross-encoder to narrow it down to a few high quality chunks!
+
+<Footnotes separator>
+  <Footnote :number=1><a href="https://weaviate.io/blog/cross-encoders-as-reranker" rel="noreferrer" target="_blank">"Using Cross-Encoders as reranker in multistage vector search"</a></Footnote>
+</Footnotes>
 
 
 ---
