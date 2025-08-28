@@ -6,7 +6,7 @@ dependencies = [
     "beautifulsoup4[lxml]>=4.13.4",
     "docling>=2.48.0",
     "jupyterlab>=4.4.5",
-    "mlx-vlm<0.2",
+    "mlx-vlm<0.2; sys_platform == 'darwin'",
     "pip>=25.2",
     "portkey-ai>=1.14.3",
     "presidio-analyzer>=2.2.359",
@@ -15,3 +15,4 @@ dependencies = [
     "sentence-transformers>=5.1.0",
     "tqdm>=4.67.1",
 ]
+
